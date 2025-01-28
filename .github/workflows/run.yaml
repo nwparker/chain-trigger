@@ -1,0 +1,20 @@
+name: Stably Test Runner
+
+on:
+  push:
+    branches:
+      - production
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  stably-test-action:
+    name: Stably Test Runner
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hello
+        run: echo "hello"
+

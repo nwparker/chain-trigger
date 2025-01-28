@@ -1,0 +1,24 @@
+name: Release Workflow
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  summarize-prs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update production branch
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git fetch origin main
+          git checkout main
+          git commit --allow-empty -m "Force update production branch"
+          git push origin main:production -f
