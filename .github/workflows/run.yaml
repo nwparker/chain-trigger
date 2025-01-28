@@ -2,11 +2,9 @@ name: Stably Test Runner
 
 on:
   workflow_dispatch:
-
-# on:
-#   push:
-#     branches:
-#       - production
+  push:
+    branches:
+      - production
 
 permissions:
   pull-requests: write
